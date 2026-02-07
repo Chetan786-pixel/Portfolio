@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chetan | Portfolio</title>
+  <style>
+    /* Background image */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      background: rgba(0,0,0,0.6);
+    }
+    header h1 {
+      font-size: 2.8rem;
+      color: #ffcc00;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #ddd;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 30px;
+      background: rgba(0,0,0,0.6);
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+
+    h2 {
+      color: #ffcc00;
+      margin-bottom: 20px;
+    }
+
+    /* Skills progress bars */
+    .skill {
+      margin-bottom: 20px;
+    }
+    .skill-name {
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+    .progress {
+      background: #333;
+      border-radius: 8px;
+      overflow: hidden;
+      height: 20px;
+    }
+    .progress-bar {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, #ffcc00, #ff6600);
+      transition: width 2s;
+    }
+
+    /* Projects grid */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .project {
+      background: #222;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .project:hover {
+      transform: scale(1.05);
+      background: #333;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0,0,0,0.7);
+      margin-top: 40px;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Chetan — Portfolio</h1>
+    <p>B.Tech Computer Science | Front-End Developer</p>
+    <p id="date"></p>
+  </header>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skill">
+      <div class="skill-name">HTML</div>
+      <div class="progress"><div class="progress-bar" data-level="100%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">CSS</div>
+      <div class="progress"><div class="progress-bar" data-level="85%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">JavaScript</div>
+      <div class="progress"><div class="progress-bar" data-level="70%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">C programming</div>
+      <div class="progress"><div class="progress-bar" data-level="90%"></div></div>
+    </div>
+  </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project">🧮 Calculator App</div>
+      <div class="project">☁️ Weather App</div>
+      <div class="project">📱 Responsive Landing Page</div>
+      <div class="project">🎮 Interactive Quiz App</div>
+    </div>
+  </section>
+
+  <section id="summary">
+    <h2>Assessment Summary</h2>
+    <p><strong>Strengths:</strong> Clean structure, responsive design.</p>
+    <p><strong>Growth Areas:</strong> JavaScript logic, debugging.</p>
+    <p><strong>Next Steps:</strong> Build more interactive projects using HTML/CSS/JS.</p>
+  </section>
+
+  <footer>
+    <p>© <span id="year"></span> Chetan — Front-End Developer</p>
+  </footer>
+
+  <script>
+    // Show today's date
+    const today = new Date();
+    document.getElementById("date").textContent = "Generated on: " + today.toDateString();
+    document.getElementById("year").textContent = today.getFullYear();
+
+    // Animate skill bars
+    window.onload = () => {
+      document.querySelectorAll(".progress-bar").forEach(bar => {
+        bar.style.width = bar.getAttribute("data-level");
+      });
+    };
+  </script>
+</body>
+</html>
